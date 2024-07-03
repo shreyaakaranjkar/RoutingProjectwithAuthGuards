@@ -1,0 +1,6 @@
+
+<p class="alert alert-info mt-2">The <strong>{{prodObj.pname}}</strong> and <strong>{{prodObj.pstatus}}</strong></p>
+<button class="btn btn-outline-success" 
+[routerLink]="['/products',prodObj.pId,'Edit']"
+[queryParamsHandling]="'preserve'"
+>Edit Product</button>

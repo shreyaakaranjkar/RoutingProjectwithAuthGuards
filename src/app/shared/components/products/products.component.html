@@ -1,0 +1,25 @@
+
+    <button class="btn btn-outline-info my-2" [routerLink]="['/products','add']">Add Products</button>
+<div class="row">
+    <div class="col-md-4 mt-2">
+        <ul class="list-group">
+            <li class="list-group-item" 
+            [ngClass]="{
+                active : product.pId === selectedProductId
+            }"
+           (click)="onProductSelect(product.pId)"
+            *ngFor="let product of productsArr"
+            [routerLink]="['/products',product.pId]"
+            [queryParams]="{
+                canEdit : product.canraturn
+            }"
+            >{{product.pname}}</li>
+        </ul>
+    </div>
+    <div class="col-md-8">
+        <router-outlet></router-outlet>
+    </div>
+</div>
+<hr>
+<button class="btn btn-outline-success" [routerLink]="['/users']">Go To Users</button>
+

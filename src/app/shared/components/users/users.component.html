@@ -1,0 +1,22 @@
+<button class="btn btn-outline-success my-2" [routerLink]="['/users','add']">
+Add User</button>
+<div class="row">
+    <div class="col-md-4 mt-2">
+        <ul class="list-group">
+            <li class="list-group-item"
+            [ngClass] = "{
+                active : user.userId === selectedUserId
+            }"
+             *ngFor="let user of usersArr"
+            [routerLink]="[user.userId]"
+            (click)="onUserSelect(user.userId)"
+            >{{user.userName}}</li>
+        </ul>
+    </div>
+   
+    <div class="col-md-8">
+<!-- [routerLink]="['/users','add']" -->
+<router-outlet></router-outlet>
+
+    </div>
+</div>
